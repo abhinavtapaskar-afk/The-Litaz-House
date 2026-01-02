@@ -10,7 +10,8 @@ const WHATSAPP_NUMBER = "9561918307";
 // ==========================
 
 let cart = [];
-let currentCategory = "";
+let currentCategory = menuData[0].category;
+
 
 // ==========================
 // INIT
