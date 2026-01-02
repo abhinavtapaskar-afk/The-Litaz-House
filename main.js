@@ -61,7 +61,8 @@ function renderMenu(categoryName) {
 
   category.items.forEach(item => {
     const card = document.createElement("div");
-    card.className = "menu-card";
+   card.className = "menu-item";
+
 
     card.innerHTML = `
       <div class="menu-info">
