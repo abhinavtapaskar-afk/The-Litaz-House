@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Litaz House | Nanded</title>
+
+  <!-- SEO -->
+  <meta name="description" content="The Litaz House – Best cafe in Nanded for pizza, coffee & celebrations." />
+  <meta name="keywords" content="Litaz House, Cafe in Nanded, Pizza Cafe, Bhagya Nagar Cafe" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- JS -->
+  <script defer src="js/menuData.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <h1 class="logo">The Litaz House</h1>
+  <p class="tagline">Fresh Taste • Beautiful Vibes • Nanded</p>
+</header>
+
+<!-- ================= CATEGORY TABS ================= -->
+<section class="categories">
+  <div id="categoryContainer"></div>
+</section>
+
+<!-- ================= MENU ================= -->
+<section class="menu">
+  <div id="menuContainer"></div>
+</section>
+
+<!-- ================= CART ================= -->
+<section class="cart">
+  <h2>Your Order</h2>
+  <div id="cartItems"></div>
+  <div class="cart-footer">
+    <span>Total:</span>
+    <strong id="totalPrice">₹0</strong>
+  </div>
+  <button class="order-btn" onclick="sendWhatsAppOrder()">Order on WhatsApp</button>
+</section>
+
+<!-- ================= BOOKING SECTION (NEW) ================= -->
+<section class="booking">
+  <h2>Book a Small Celebration 🎉</h2>
+  <p class="booking-desc">
+    Perfect for Birthday, Anniversary & Friends Meet  
+    <br/>Capacity: up to 6 people
+  </p>
+
+  <div class="booking-cards">
+    <div class="booking-card">🎂 Birthday</div>
+    <div class="booking-card">💍 Anniversary</div>
+    <div class="booking-card">👥 Friends Meet</div>
+  </div>
+
+  <button class="booking-btn" onclick="sendBookingRequest()">
+    Enquire on WhatsApp
+  </button>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="reviews">
+  <h2>What People Say ❤️</h2>
+
+  <div class="review-card">
+    ⭐⭐⭐⭐⭐<br/>
+    “Never saw such pizza even in Domino’s or Pizza Hut. Best pizza ever!”  
+    <br/><small>— Shubham Vayval</small>
+  </div>
+
+  <div class="review-card">
+    ⭐⭐⭐⭐⭐<br/>
+    “Amazing taste, hygienic cafe, good quality.”  
+    <br/><small>— Ritesh Waybhase</small>
+  </div>
+
+  <div class="review-card">
+    ⭐⭐⭐⭐⭐<br/>
+    “Cafe is very beautiful & taste also 🎀”  
+    <br/><small>— Asmita Kandhare</small>
+  </div>
+</section>
+
+<!-- ================= VISIT US ================= -->
+<section class="visit">
+  <h2>Visit Us 📍</h2>
+  <p>58F5+CM4, Shyam Nagar, Nanded</p>
+
+  <div class="visit-buttons">
+    <a href="tel:9561918307" class="call-btn">Call Now</a>
+    <a href="https://maps.app.goo.gl/G4o2G1Wt3X8zokM79" target="_blank" class="map-btn">
+      Open in Maps
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© 2026 The Litaz House • Crafted locally in Nanded</p>
+</footer>
+
+</body>
+</html>
