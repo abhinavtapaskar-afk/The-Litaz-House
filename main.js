@@ -30,30 +30,52 @@ function renderCategories() {
 }
 
 // ================= MENU RENDER =================
-function renderMenu() {
+function renderMenu(categoryName) {
   const menuContainer = document.getElementById("menuContainer");
   menuContainer.innerHTML = "";
 
-  menuData
-    .filter(item => item.category === currentCategory)
-    .forEach(item => {
-      const card = document.createElement("div");
-      card.className = "menu-card";
+  const categoryObj = menuData.find(
+    cat => cat.category === categoryName
+  );
 
-      card.innerHTML = `
-        <h3>${item.name}</h3>
-        <p class="price">₹${item.price}</p>
-        <button onclick="addToCart('${item.name}', ${item.price})">
-          Add to Cart
-        </button>
-      `;
+  if (!categoryObj) return;
 
-      menuContainer.appendChild(card);
-    });
+  categoryObj.items.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "menu-item";
+
+    card.innerHTML = `
+      <h3>${item.name}</h3>
+      <p class="price">₹${item.price}</p>
+
+      <div class="qty-controls">
+        <button onclick="decreaseQty(${item.id})">−</button>
+        <span id="qty-${item.id}">0</span>
+        <button onclick="addToCart(${item.id})">+</button>
+      </div>
+    `;
+
+    menuContainer.appendChild(card);
+  });
 }
+
 
 // ================= CART LOGIC =================
 function addToCart(name, price) {
+  
+  function decreaseQty(itemId) {
+  const item = cart.find(i => i.id === itemId);
+  if (!item) return;
+
+  item.qty -= 1;
+
+  if (item.qty <= 0) {
+    cart = cart.filter(i => i.id !== itemId);
+  }
+
+  renderCart();
+}
+
   const existing = cart.find(i => i.name === name);
   if (existing) {
     existing.qty++;
