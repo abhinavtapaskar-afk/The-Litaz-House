@@ -133,7 +133,15 @@ function sendWhatsAppOrder() {
     total += item.price * item.qty;
   });
 
-  message += `%0A💰 *Total: ₹${total}*%0A📍 Pickup: Cafe%0A💬 Please confirm my order!`;
+  message += `%0A💰 *Total: ₹${total}*`;
+  
+  // Delivery Charge Policy
+  message += `%0A%0A🚚 *DELIVERY INFO:*%0A_Free delivery within 2km._%0A_Small charge apply for long distances._`;
+  
+  // Smart Location Instructions
+  message += `%0A%0A📍 *SHARE LOCATION:*%0A_Please tap ( 📎 ) or ( + ) and share your "Live Location" so we can deliver to your doorstep!_`;
+
+  message += `%0A%0A💬 Please confirm my order!`;
 
   window.open(`https://wa.me/919561918307?text=${message}`, "_blank");
 }
