@@ -5,26 +5,39 @@ let currentCategory = "";
 // ================= INIT =================
 document.addEventListener("DOMContentLoaded", () => {
   renderCategories();
+  renderMenu(menuData[0].category);
 });
 
 // ================= CATEGORY RENDER =================
 function renderCategories() {
-  const container = document.getElementById("categoryContainer");
-  container.innerHTML = "";
+  const categoryContainer = document.getElementById("categoryContainer");
+  categoryContainer.innerHTML = "";
 
-  const categories = [...new Set(menuData.map(item => item.category))];
-  currentCategory = categories[0];
-
-  categories.forEach(cat => {
+  menuData.forEach((cat, index) => {
     const btn = document.createElement("button");
+    btn.innerText = cat.category;
     btn.className = "category-btn";
-    btn.innerText = cat;
+
+    if (index === 0) {
+      btn.classList.add("active");
+      currentCategory = cat.category;
+    }
+
     btn.onclick = () => {
-      currentCategory = cat;
-      renderMenu();
+      document
+        .querySelectorAll(".category-btn")
+        .forEach(b => b.classList.remove("active"));
+
+      btn.classList.add("active");
+      currentCategory = cat.category;
+
+      renderMenu(currentCategory);
     };
-    container.appendChild(btn);
+
+    categoryContainer.appendChild(btn);
   });
+  
+}
 
   renderMenu();
 }
