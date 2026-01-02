@@ -1,0 +1,283 @@
+/* =====================
+   ROOT COLORS
+===================== */
+:root {
+    --violet: #6a0dad;
+    --pink: #ff4da6;
+    --white: #ffffff;
+    --light-gray: #f7f7f9;
+    --dark-text: #222;
+    --shadow: rgba(106, 13, 173, 0.15);
+  }
+  
+  /* =====================
+     GLOBAL
+  ===================== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui, sans-serif;
+  }
+  
+  body {
+    background: var(--white);
+    color: var(--dark-text);
+    line-height: 1.6;
+  }
+  
+  /* =====================
+     HEADER
+  ===================== */
+  .header {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background: linear-gradient(135deg, var(--violet), var(--pink));
+    color: white;
+  }
+  
+  .logo {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  .tagline {
+    opacity: 0.9;
+    margin-top: 0.5rem;
+  }
+  
+  /* =====================
+     CATEGORIES
+  ===================== */
+  .categories {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #categoryContainer {
+    display: flex;
+    gap: 0.6rem;
+    overflow-x: auto;
+  }
+  
+  .category-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--violet);
+    background: white;
+    color: var(--violet);
+    cursor: pointer;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  
+  .category-btn.active {
+    background: var(--violet);
+    color: white;
+  }
+  
+  /* =====================
+     MENU
+  ===================== */
+  .menu {
+    padding: 1.5rem;
+  }
+  
+  #menuContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  
+  .menu-item {
+    background: white;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 6px 20px var(--shadow);
+    text-align: center;
+  }
+  
+  .menu-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .menu-item p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+  
+  .price {
+    color: var(--pink);
+    font-weight: 600;
+    margin: 0.4rem 0;
+  }
+  
+  /* =====================
+     QTY CONTROLS
+  ===================== */
+  .qty-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+  }
+  
+  .qty-controls button {
+    border: none;
+    background: var(--violet);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .qty-controls span {
+    font-weight: 600;
+  }
+  
+  /* =====================
+     CART
+  ===================== */
+  .cart {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--violet);
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 -4px 20px var(--shadow);
+  }
+  
+  .cart h2 {
+    font-size: 1.1rem;
+  }
+  
+  #cartItems {
+    max-height: 120px;
+    overflow-y: auto;
+    font-size: 0.85rem;
+  }
+  
+  .cart-footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.6rem 0;
+  }
+  
+  .order-btn {
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--pink);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  /* =====================
+     BOOKING SECTION
+  ===================== */
+  .booking {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: var(--light-gray);
+    margin-bottom: 6rem;
+  }
+  
+  .booking h2 {
+    color: var(--violet);
+    margin-bottom: 0.5rem;
+  }
+  
+  .booking-desc {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .booking-cards {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+  
+  .booking-card {
+    background: white;
+    padding: 0.7rem 1rem;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px var(--shadow);
+    font-size: 0.9rem;
+  }
+  
+  .booking-btn {
+    margin-top: 1rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(135deg, var(--violet), var(--pink));
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  /* =====================
+     REVIEWS
+  ===================== */
+  .reviews {
+    padding: 2rem 1rem;
+  }
+  
+  .review-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 6px 18px var(--shadow);
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  /* =====================
+     VISIT US
+  ===================== */
+  .visit {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .visit-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.8rem;
+  }
+  
+  .call-btn,
+  .map-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    background: var(--violet);
+  }
+  
+  .map-btn {
+    background: var(--pink);
+  }
+  
+  /* =====================
+     FOOTER
+  ===================== */
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+
