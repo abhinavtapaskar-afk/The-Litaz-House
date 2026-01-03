@@ -147,6 +147,19 @@ function sendWhatsAppOrder() {
 }
 
 function sendBookingRequest() {
-  const msg = `🎉 *Celebration Booking Enquiry*%0A%0AType: Birthday / Anniversary / Friends Meet%0A👥 Guests: Up to 6%0A🕒 Please share available slots.`;
-  window.open(`https://wa.me/919561918307?text=${encodeURIComponent(msg)}`, "_blank");
+
+    // Owner's Number: +91 95619 18307
+    const phoneNumber = "919561918307"; 
+    
+    let bookingMessage = `✨ *SPECIAL CELEBRATION INQUIRY - THE LITAZ HOUSE* ✨%0A%0A`;
+    bookingMessage += `I want to check availability for a special celebration!%0A%0A`;
+    bookingMessage += `🎈 *Event:* [Birthday / Anniversary / Friends Meet]%0A`;
+    bookingMessage += `👥 *Group Size:* [e.g. 6 People]%0A`;
+    bookingMessage += `📅 *Preferred Date:* [Enter Date]%0A`;
+    bookingMessage += `🕒 *Preferred Time:* [Enter Time]%0A%0A`;
+    bookingMessage += `🎊 _Does this slot have availability for decoration?_%0A%0A`;
+    bookingMessage += `Please confirm so I can finalize my plans! 🙏`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${bookingMessage}`;
+    window.open(url, '_blank');
 }
