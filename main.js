@@ -50,11 +50,12 @@ function renderMenu(categoryName) {
     const card = document.createElement("div");
     card.className = "menu-item";
 
-    // Check if item is already in cart to show correct qty
     const cartItem = cart.find(i => i.id === item.id);
     const displayQty = cartItem ? cartItem.qty : 0;
 
+    // Fixed the brackets and removed the extra variable assignment
     card.innerHTML = `
+      <img src="${item.image || 'assets/images/placeholder.jpg'}" alt="${item.name}" class="item-img" onerror="this.style.display='none'">
       <h3>${item.name}</h3>
       <p class="price">₹${item.price}</p>
       <div class="qty-controls">
