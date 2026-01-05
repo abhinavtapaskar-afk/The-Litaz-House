@@ -47,10 +47,13 @@ const menuData = [
     {
       category: "Burger",
       items: [
-        { id: 20, name: "Indian Paneer Burger", price: 115, image: "assets/images/indian-paneer-burger.jpg" },
+        { id: 20, name: "Indian Paneer Burger", price: 115, image: "assets/images/indian-paneer-burger.png" },
         { id: 21, name: "Maharaja Masala Burger", price: 85, image: "assets/images/maharaja-masala-burger.png" },
-        { id: 22, name: "Tandoori Delight Burger", price: 75, image: "assets/images/tandoori-delight-burger.jpg" },
-        { id: 23, name: "Veg Crispy Burger", price: 75, image: "assets/images/veg-crispy-burger.jpg" },
+
+        { id: 22, name: "Tandoori Delight Burger", price: 75, image: "assets/images/tandoori-delight-burger.png" },
+        { id: 23, name: "Veg Crispy Burger", price: 75, image: "assets/images/veg-crispy-burger.png" },
+
+
         { id: 24, name: "Mayo Delight Burger", price: 65, image: "assets/images/mayo-delight-burger.png" }
       ]
     },
