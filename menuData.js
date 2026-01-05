@@ -70,10 +70,10 @@ const menuData = [
     {
       category: "Pizza",
       items: [
-        { id: 29, name: "Tandoori Paneer Pizza", price: 170, image: "" },
-        { id: 30, name: "Onion and Capsicum Pizza", price: 140, image: "" },
-        { id: 31, name: "Corn and Cheese Pizza", price: 130, image: "" },
-        { id: 32, name: "Classic Cheese Pizza", price: 120, image: "" }
+        { id: 29, name: "Tandoori Paneer Pizza", price: 170, image: "assets/images/tandoori-paneer-pizza.png" },
+        { id: 30, name: "Onion and Capsicum Pizza", price: 140, image: "assets/images/onion-and-capsicum-pizza.png" },
+        { id: 31, name: "Corn and Cheese Pizza", price: 130, image: "assets/images/corn-and-cheese-pizza.png" },
+        { id: 32, name: "Classic Cheese Pizza", price: 120, image: "assets/images/classic-cheese-pizza.png" }
       ]
     },
   
