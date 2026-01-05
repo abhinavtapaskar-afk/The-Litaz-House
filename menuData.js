@@ -17,10 +17,10 @@ const menuData = [
       items: [
         { id: 6, name: "Chocolate Cold Coffee", price: 40, image: "" },
         { id: 7, name: "Thick Cold Coffee", price: 55, image: "" },
-        { id: 8, name: "Cold Coffee with Crush", price: 70, image: "" },
-        { id: 9, name: "Cold Coffee with Ice Cream", price: 85, image: "" },
-        { id: 10, name: "KitKat Crunch Shake", price: 95, image: "" },
-        { id: 11, name: "Oreo Crunch Shake", price: 95, image: "" },
+        { id: 8, name: "Cold Coffee with Crush", price: 70, image: "assets/images/cold-coffee-with-crush.png" },
+        { id: 9, name: "Cold Coffee with Ice Cream", price: 85, image: "assets/images/cold-coffee-with-icecream.png" },
+        { id: 10, name: "KitKat Crunch Shake", price: 95, image: "assets/images/kitkat-crunch-shake.png" },
+        { id: 11, name: "Oreo Crunch Shake", price: 95, image: "assets/images/oreo-crunch-shake.png" },
         { id: 12, name: "Strawberry Milk Shake", price: 90, image: "" }
       ]
     },
