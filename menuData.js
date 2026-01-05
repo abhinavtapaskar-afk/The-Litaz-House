@@ -60,10 +60,10 @@ const menuData = [
     {
       category: "Sandwich",
       items: [
-        { id: 25, name: "Paneer Cheese Burst Sandwich", price: 95, image: "" },
-        { id: 26, name: "Litaz Chocolate Crush Sandwich", price: 95, image: "" },
-        { id: 27, name: "Veg Cheese Grill Sandwich", price: 75, image: "" },
-        { id: 28, name: "Veg Grill Sandwich", price: 55, image: "" }
+        { id: 25, name: "Paneer Cheese Burst Sandwich", price: 95, image: "assets/images/paneer-cheese-burst-sandwich.png" },
+        { id: 26, name: "Litaz Chocolate Crush Sandwich", price: 95, image: "assets/images/litaz-chocolate-crush-sandwich.png" },
+        { id: 27, name: "Veg Cheese Grill Sandwich", price: 75, image: "assets/images/veg-cheese-grill-sandwich.png" },
+        { id: 28, name: "Veg Grill Sandwich", price: 55, image: "assets/images/veg-grill-sandwich.png" }
       ]
     },
   
