@@ -4,11 +4,10 @@ const menuData = [
     {
       category: "Tea & Coffee",
       items: [
-        { id: 1, name: "Tea", price: 10, image: "" },
-        { id: 2, name: "Milk Tea", price: 10, image: "" },
-        { id: 3, name: "Black Tea", price: 10, image: "" },
-        { id: 4, name: "Hot Coffee", price: 15, image: "" },
-        { id: 5, name: "Black Coffee", price: 15, image: "" }
+        { id: 1, name: "Milk Tea", price: 10, image: "assets/images/milk-tea.png" },
+        { id: 2, name: "Black Tea", price: 10, image: "assets/images/black-tea.png" },
+        { id: 3, name: "Hot Milk Coffee", price: 15, image: "assets/images/hot-milk-coffee.png" },
+        { id: 4, name: "Hot Black Coffee", price: 15, image: "assets/images/hot-black-coffee.png" }
       ]
     },
   
