@@ -80,12 +80,12 @@ const menuData = [
     {
       category: "Vadapav",
       items: [
-        { id: 33, name: "Classic Vadapav", price: 20, image: "" },
-        { id: 34, name: "Bombay Crunch Vadapav", price: 30, image: "" },
-        { id: 35, name: "Tandoori Bombay Crunch", price: 40, image: "" },
-        { id: 36, name: "Maharaja Vadapav", price: 40, image: "" },
-        { id: 37, name: "Maharaja Masala Vadapav", price: 50, image: "" },
-        { id: 38, name: "Paneer Vadapav", price: 70, image: "" }
+        { id: 33, name: "Classic Vadapav", price: 20, image: "assets/images/classic-vadapav.png" },
+        { id: 34, name: "Bombay Crunch Vadapav", price: 30, image: "assets/images/bombay-crunch-vadapav.png" },
+        { id: 35, name: "Tandoori Bombay Crunch", price: 40, image: "assets/images/tandoori-bombay-crunch.png" },
+        { id: 36, name: "Maharaja Vadapav", price: 40, image: "assets/images/maharaja-vadapav.png" },
+        { id: 37, name: "Maharaja Masala Vadapav", price: 50, image: "assets/images/maharaja-masala-vadapav.png" },
+        { id: 38, name: "Paneer Vadapav", price: 70, image: "assets/images/paneer-vadapav.png" }
       ]
     }
   ];
