@@ -35,11 +35,11 @@ const menuData = [
     {
       category: "Fries & Bites",
       items: [
-        { id: 15, name: "Salted Fries", price: 70, image: "" },
-        { id: 16, name: "Peri Peri Fries", price: 80, image: "" },
-        { id: 17, name: "Salted Fries with Cheese", price: 85, image: "" },
-        { id: 18, name: "Peri Peri Fries with Cheese", price: 95, image: "" },
-        { id: 19, name: "Garlic Eye Poppers (6 pcs)", price: 45, image: "" }
+        { id: 15, name: "Salted Fries", price: 70, image: "assets/images/salted-fries.png" },
+        { id: 16, name: "Peri Peri Fries", price: 80, image: "assets/images/peri-peri-fries.png" },
+        { id: 17, name: "Salted Fries with Cheese", price: 85, image: "assets/images/salted-fries-with-cheese.png" },
+        { id: 18, name: "Peri Peri Fries with Cheese", price: 95, image: "assets/images/peri-peri-fries-with-cheese.png" },
+        { id: 19, name: "Garlic Eye Poppers (6 pcs)", price: 45, image: "assets/images/garlic-eye-poppers.png" }
       ]
     },
   
