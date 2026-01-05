@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C21GX2CN5T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C21GX2CN5T');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Litaz House | Nanded</title>
@@ -10,11 +19,13 @@
   <meta name="keywords" content="Litaz House, Cafe in Nanded, Pizza Cafe, Bhagya Nagar Cafe" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.css" />
+
 
   <!-- JS -->
-  <script defer src="js/menuData.js"></script>
-  <script defer src="js/main.js"></script>
+ <script defer src="menuData.js"></script>
+<script defer src="main.js"></script>
+
 </head>
 
 <body>
@@ -23,6 +34,9 @@
 <header class="header">
   <h1 class="logo">The Litaz House</h1>
   <p class="tagline">Fresh Taste • Beautiful Vibes • Nanded</p>
+  <div style="background: #fff; color: var(--pink); display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; margin-top: 5px;">
+    🛵 Home Delivery Available
+  </div>
 </header>
 
 <!-- ================= CATEGORY TABS ================= -->
@@ -44,6 +58,9 @@
     <strong id="totalPrice">₹0</strong>
   </div>
   <button class="order-btn" onclick="sendWhatsAppOrder()">Order on WhatsApp</button>
+<p style="text-align: center; font-size: 0.75rem; margin-top: 8px; opacity: 0.9; color: white;">
+    📍 Location will be asked on WhatsApp after ordering
+  </p>
 </section>
 
 <!-- ================= BOOKING SECTION (NEW) ================= -->
@@ -51,7 +68,7 @@
   <h2>Book a Small Celebration 🎉</h2>
   <p class="booking-desc">
     Perfect for Birthday, Anniversary & Friends Meet  
-    <br/>Capacity: up to 6 people
+    <br/>Capacity: up to 8 people
   </p>
 
   <div class="booking-cards">
@@ -64,7 +81,63 @@
     Enquire on WhatsApp
   </button>
 </section>
+<section id="about" class="about-litaz-section" style="
+    padding: 60px 20px;
+    background: var(--white);
+    text-align: center;
+    border-top: 1px solid var(--light-gray);
+    margin-top: 20px;
+">
+    <div style="max-width: 800px; margin: 0 auto;">
+        
+        <span style="
+            color: var(--pink);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 15px;
+        ">Our Story & Vision</span>
 
+        <h2 style="
+            color: var(--violet);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        ">Crafting Experiences, One Sip at a Time</h2>
+
+        <div style="
+            line-height: 1.8;
+            color: var(--dark-text);
+            font-size: 1.05rem;
+            text-align: center;
+        ">
+            <p style="margin-bottom: 20px;">
+                At <strong>The Litaz House</strong>, we don't just serve coffee; we craft experiences that linger long after the last sip. Born from a vision to bring world-class flavors to the heart of Nanded, our space is a sanctuary for those who appreciate the finer details of taste and vibe.
+            </p>
+
+            <p style="margin-bottom: 20px;">
+                From the velvet creaminess of our signature <em>Thick Cold Coffee</em> to the artisanal crunch of our handcrafted pizzas, every creation is a masterpiece of quality and hygiene. We believe that every celebration, big or small, deserves a setting as vibrant and ambitious as your dreams.
+            </p>
+
+            <p style="
+                margin-top: 35px;
+                padding: 20px;
+                background: var(--light-gray);
+                border-radius: 15px;
+                color: var(--violet);
+                font-weight: 600;
+                font-style: italic;
+                border-left: 5px solid var(--pink);
+            ">
+                Step into a world where premium ingredients meet soul-stirring atmosphere. <br>
+                <span style="color: var(--pink); font-style: normal; font-size: 1.1rem;">Welcome to the family—welcome to The Litaz House.</span>
+            </p>
+        </div>
+    </div>
+</section>
 <!-- ================= REVIEWS ================= -->
 <section class="reviews">
   <h2>What People Say ❤️</h2>
@@ -86,25 +159,72 @@
     “Cafe is very beautiful & taste also 🎀”  
     <br/><small>— Asmita Kandhare</small>
   </div>
-</section>
+
+<div class="review-card">
+    ⭐⭐⭐⭐⭐<br/>
+    “Best spot in Nanded for a birthday treat! The thick cold coffee is literally a meal in itself. 10/10 vibes.”  
+    <br/><small>— Omkar Deshmukh</small>
+  </div>
+
+  <div class="review-card">
+    ⭐⭐⭐⭐⭐<br/>
+    “Finally a cafe that maintains hygiene and quality. Their Tandoori Paneer Pizza is a must-try!”  
+    <br/><small>— Sneha Patil</small>
+  </div>
+  </section>
+  
 
 <!-- ================= VISIT US ================= -->
-<section class="visit">
+
+  <section class="visit">
   <h2>Visit Us 📍</h2>
   <p>58F5+CM4, Shyam Nagar, Nanded</p>
+  <p style="color: var(--pink); font-weight: 600; margin-top: 5px;">
+    Open: 11:00 AM – 10:00 PM
+  </p>
 
   <div class="visit-buttons">
     <a href="tel:9561918307" class="call-btn">Call Now</a>
-    <a href="https://maps.app.goo.gl/G4o2G1Wt3X8zokM79" target="_blank" class="map-btn">
-      Open in Maps
+    <a href="https://maps.google.com/?cid=1382537951655969311&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" target="_blank" class="map-btn">
+  Open in Maps
     </a>
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <p>© 2026 The Litaz House • Crafted locally in Nanded</p>
+  <footer style="padding: 60px 20px; text-align: center; font-family: sans-serif;">
+    
+    <p style="color: #000; font-weight: 900; font-size: 1.1rem; margin-bottom: 8px;">
+        © 2026 THE LITAZ HOUSE. ALL RIGHTS RESERVED.
+    </p>
+
+    <p style="color: #000; font-weight: 700; font-size: 0.85rem; margin-bottom: 12px;">
+        🛡️ PRIVACY POLICY: SECURE WHATSAPP ORDERING. NO DATA SHARING.
+    </p>
+
+    <p style="color: #000; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px;">
+        DEVELOPED IN NANDED
+    </p>
 </footer>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

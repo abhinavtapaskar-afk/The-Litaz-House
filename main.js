@@ -1,167 +1,166 @@
-// ==========================
-// CONFIG (SAFE VARIABLES)
-// ==========================
-
-const CAFE_NAME = "The Litaz House";
-const WHATSAPP_NUMBER = "9561918307";
-
-// ==========================
-// GLOBAL STATE
-// ==========================
-
+// ================= GLOBAL STATE =================
 let cart = [];
 let currentCategory = "";
 
-// ==========================
-// INIT
-// ==========================
-
+// ================= INIT =================
 document.addEventListener("DOMContentLoaded", () => {
-  renderCategories();
-  renderMenu(menuData[0].category);
+  if (typeof menuData !== 'undefined' && menuData.length > 0) {
+    currentCategory = menuData[0].category;
+    renderCategories();
+    renderMenu(currentCategory);
+  }
 });
 
-// ==========================
-// CATEGORY RENDER
-// ==========================
-
+// ================= CATEGORY RENDER =================
 function renderCategories() {
   const categoryContainer = document.getElementById("categoryContainer");
+  if (!categoryContainer) return;
   categoryContainer.innerHTML = "";
 
   menuData.forEach((cat, index) => {
     const btn = document.createElement("button");
     btn.innerText = cat.category;
-    btn.className = index === 0 ? "category-btn active" : "category-btn";
+    btn.className = "category-btn";
+
+    if (cat.category === currentCategory) {
+      btn.classList.add("active");
+    }
 
     btn.onclick = () => {
-      document
-        .querySelectorAll(".category-btn")
-        .forEach(b => b.classList.remove("active"));
-
+      document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      renderMenu(cat.category);
+      currentCategory = cat.category;
+      renderMenu(currentCategory);
     };
 
     categoryContainer.appendChild(btn);
   });
 }
 
-// ==========================
-// MENU RENDER
-// ==========================
-
+// ================= MENU RENDER =================
 function renderMenu(categoryName) {
-  currentCategory = categoryName;
   const menuContainer = document.getElementById("menuContainer");
+  if (!menuContainer) return;
   menuContainer.innerHTML = "";
 
-  const category = menuData.find(c => c.category === categoryName);
-  if (!category) return;
+  const categoryObj = menuData.find(cat => cat.category === categoryName);
+  if (!categoryObj) return;
 
-  category.items.forEach(item => {
+  categoryObj.items.forEach(item => {
     const card = document.createElement("div");
-    card.className = "menu-card";
+    card.className = "menu-item";
 
+    const cartItem = cart.find(i => i.id === item.id);
+    const displayQty = cartItem ? cartItem.qty : 0;
+
+    // Fixed the brackets and removed the extra variable assignment
     card.innerHTML = `
-      <div class="menu-info">
-        <h3>${item.name}</h3>
-        <p>₹${item.price}</p>
-        <button onclick="addToCart(${item.id})">Add</button>
+      <img src="${item.image || 'assets/images/placeholder.jpg'}" alt="${item.name}" class="item-img" onerror="this.style.display='none'">
+      <h3>${item.name}</h3>
+      <p class="price">₹${item.price}</p>
+      <div class="qty-controls">
+        <button onclick="changeQty(${item.id}, -1)">−</button>
+        <span id="qty-${item.id}">${displayQty}</span>
+        <button onclick="changeQty(${item.id}, 1)">+</button>
       </div>
     `;
-
     menuContainer.appendChild(card);
   });
 }
 
-// ==========================
-// CART LOGIC
-// ==========================
+// ================= CART & QTY LOGIC =================
+function changeQty(itemId, delta) {
+  // Find item details from menuData
+  let itemDetails = null;
+  menuData.forEach(cat => {
+    const found = cat.items.find(i => i.id === itemId);
+    if (found) itemDetails = found;
+  });
 
-function addToCart(itemId) {
-  const item = menuData
-    .flatMap(c => c.items)
-    .find(i => i.id === itemId);
+  const cartItem = cart.find(i => i.id === itemId);
 
-  if (!item) return;
-
-  const existing = cart.find(c => c.id === itemId);
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cart.push({ ...item, qty: 1 });
+  if (cartItem) {
+    cartItem.qty += delta;
+    if (cartItem.qty <= 0) {
+      cart = cart.filter(i => i.id !== itemId);
+    }
+  } else if (delta > 0) {
+    cart.push({ ...itemDetails, qty: 1 });
   }
 
-  renderCart();
-}
+  // Update UI
+  const qtySpan = document.getElementById(`qty-${itemId}`);
+  if (qtySpan) {
+    const updatedItem = cart.find(i => i.id === itemId);
+    qtySpan.innerText = updatedItem ? updatedItem.qty : 0;
+  }
 
-function removeFromCart(itemId) {
-  cart = cart.filter(item => item.id !== itemId);
   renderCart();
 }
 
 function renderCart() {
-  const cartContainer = document.getElementById("cartItems");
-  const totalPriceEl = document.getElementById("totalPrice");
+  const cartItems = document.getElementById("cartItems");
+  const totalPrice = document.getElementById("totalPrice");
+  if (!cartItems || !totalPrice) return;
 
-  cartContainer.innerHTML = "";
-
+  cartItems.innerHTML = "";
   let total = 0;
 
   cart.forEach(item => {
     total += item.price * item.qty;
-
-    const div = document.createElement("div");
-    div.className = "cart-item";
-
-    div.innerHTML = `
-      <span>${item.name} × ${item.qty}</span>
-      <span>₹${item.price * item.qty}</span>
-      <button onclick="removeFromCart(${item.id})">✕</button>
+    cartItems.innerHTML += `
+      <div class="cart-item" style="display:flex; justify-content:space-between; margin-bottom:5px;">
+        <span>${item.name} x${item.qty}</span>
+        <span>₹${item.price * item.qty}</span>
+      </div>
     `;
-
-    cartContainer.appendChild(div);
   });
 
-  totalPriceEl.innerText = "₹" + total;
+  totalPrice.innerText = `₹${total}`;
 }
 
-// ==========================
-// WHATSAPP ORDER
-// ==========================
-
+// ================= WHATSAPP ORDER =================
 function sendWhatsAppOrder() {
   if (cart.length === 0) {
-    alert("Cart is empty");
+    alert("Your cart is empty");
     return;
   }
 
-  let message = `Hello ${CAFE_NAME},%0A%0A`;
-  message += `I want to place an order:%0A`;
+  let message = `🛒 *New Order – The Litaz House*%0A%0A`;
+  let total = 0;
 
   cart.forEach(item => {
-    message += `• ${item.name} × ${item.qty} = ₹${item.price * item.qty}%0A`;
+    message += `• ${item.name} x${item.qty} = ₹${item.price * item.qty}%0A`;
+    total += item.price * item.qty;
   });
 
-  const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-  message += `%0ATotal: ₹${total}%0A%0AThank you!`;
+  message += `%0A💰 *Total: ₹${total}*`;
+  
+  // Delivery Charge Policy
+  message += `%0A%0A🚚 *DELIVERY INFO:*%0A_Free delivery within 2km._%0A_Small charge apply for long distances._`;
+  
+  // Smart Location Instructions
+  message += `%0A%0A📍 *SHARE LOCATION:*%0A_Please tap ( 📎 ) or ( + ) and share your "Live Location" so we can deliver to your doorstep!_`;
 
-  const url = `https://wa.me/91${WHATSAPP_NUMBER}?text=${message}`;
-  window.open(url, "_blank");
+  message += `%0A%0A💬 Please confirm my order!`;
+
+  window.open(`https://wa.me/919561918307?text=${message}`, "_blank");
 }
-// ==========================
-// BOOKING WHATSAPP
-// ==========================
 
 function sendBookingRequest() {
-  const message =
-    `Hello The Litaz House,%0A%0A` +
-    `I would like to book a small celebration.%0A` +
-    `Occasion: Birthday / Anniversary / Friends Meet%0A` +
-    `People: Up to 6%0A%0A` +
-    `Please let me know available time slots.%0A%0AThank you!`;
 
-  const url = `https://wa.me/919561918307?text=${message}`;
-  window.open(url, "_blank");
+    // Owner's Number: +91 95619 18307
+    const phoneNumber = "919561918307"; 
+    
+    let bookingMessage = `✨ *SPECIAL CELEBRATION INQUIRY - THE LITAZ HOUSE* ✨%0A%0A`;
+    bookingMessage += `I want to check availability for a special celebration!%0A%0A`;
+    bookingMessage += `🎈 *Event:* [Birthday / Anniversary / Friends Meet]%0A`;
+    bookingMessage += `👥 *Group Size:* [e.g. 6 People]%0A`;
+    bookingMessage += `📅 *Preferred Date:* [Enter Date]%0A`;
+    bookingMessage += `🕒 *Preferred Time:* [Enter Time]%0A%0A`;
+    bookingMessage += `🎊 _Does this slot have availability for decoration?_%0A%0A`;
+    bookingMessage += `Please confirm so I can finalize my plans! 🙏`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${bookingMessage}`;
+    window.open(url, '_blank');
 }
