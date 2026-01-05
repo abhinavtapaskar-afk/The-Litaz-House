@@ -140,7 +140,7 @@ function sendWhatsAppOrder() {
   message += `%0A%0A🚚 *DELIVERY INFO:*%0A_Free delivery within 2km._%0A_Small charge apply for long distances._`;
   
   // Smart Location Instructions
-  message += `%0A%0A📍 *SHARE LOCATION:*%0A_Please tap ( 📎 ) or ( + ) and share your "Live Location" so we can deliver to your doorstep!_`;
+  message += `%0A%0A📍 *SHARE LOCATION:*%0A_Please tap ( 📎 ) or ( ➕ ) and share your "Live Location" so we can deliver to your doorstep!_`;
 
   message += `%0A%0A💬 Please confirm my order!`;
 
