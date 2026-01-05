@@ -15,7 +15,7 @@ const menuData = [
     {
       category: "Cold Coffee & Shakes",
       items: [
-        { id: 6, name: "Chocolate Cold Coffee", price: 40, image: "" },
+        { id: 6, name: "Chocolate Cold Coffee", price: 40, image: "assets/images/chocolate-cold-coffee.png" },
         { id: 7, name: "Thick Cold Coffee", price: 55, image: "assets/images/thick-cold-coffee.png" },
         { id: 8, name: "Cold Coffee with Crush", price: 70, image: "assets/images/cold-coffee-with-crush.png" },
         { id: 9, name: "Cold Coffee with Ice Cream", price: 85, image: "assets/images/cold-coffee-with-icecream.png" },
