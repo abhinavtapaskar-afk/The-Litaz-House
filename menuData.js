@@ -48,7 +48,7 @@ const menuData = [
       category: "Burger",
       items: [
         { id: 20, name: "Indian Paneer Burger", price: 115, image: "" },
-        { id: 21, name: "Maharaja Masala Burger", price: 85, image: "" },
+        { id: 21, name: "Maharaja Masala Burger", price: 85, image: "maharaja-burger.png" },
         { id: 22, name: "Tandoori Delight Burger", price: 75, image: "" },
         { id: 23, name: "Veg Crispy Burger", price: 75, image: "" },
         { id: 24, name: "Mayo Delight Burger", price: 65, image: "" }
