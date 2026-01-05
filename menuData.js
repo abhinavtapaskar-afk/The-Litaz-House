@@ -28,8 +28,8 @@ const menuData = [
     {
       category: "Mocktails",
       items: [
-        { id: 13, name: "Mint Refresher", price: 55, image: "" },
-        { id: 14, name: "Ocean Breeze", price: 55, image: "" }
+        { id: 13, name: "Mint Refresher", price: 55, image: "assets/images/mint-refresher.png" },
+        { id: 14, name: "Ocean Breeze", price: 55, image: "assets/images/ocean-breeze.png" }
       ]
     },
   
