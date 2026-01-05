@@ -51,7 +51,7 @@ const menuData = [
         { id: 21, name: "Maharaja Masala Burger", price: 85, image: "assets/images/maharaja-masala-burger.png" },
         { id: 22, name: "Tandoori Delight Burger", price: 75, image: "assets/images/tandoori-delight-burger.png" },
         { id: 23, name: "Veg Crispy Burger", price: 75, image: "assets/images/veg-crispy-burger.png" },
-        { id: 24, name: "Mayo Delight Burger", price: 65, image: "" }
+        { id: 24, name: "Mayo Delight Burger", price: 65, image: "assets/images/mayo-delight-burger.png" }
       ]
     },
   
