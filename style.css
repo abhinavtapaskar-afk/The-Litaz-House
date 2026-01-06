@@ -88,8 +88,11 @@
   
   #menuContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    /* FIX: auto-fill prevents stretching, and 200px limits the max width */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 200px));
     gap: 1rem;
+    /* Keeps items centered if they don't fill the whole row */
+    justify-content: center;
   }
   
   .menu-item {
