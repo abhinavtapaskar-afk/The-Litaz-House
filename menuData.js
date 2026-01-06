@@ -77,7 +77,7 @@ const menuData = [
       ]
     },
   
-    {
+    /* {
       category: "Vadapav",
       items: [
         { id: 33, name: "Classic Vadapav", price: 20, image: "assets/images/classic-vadapav.png" },
@@ -87,6 +87,6 @@ const menuData = [
         { id: 37, name: "Maharaja Masala Vadapav", price: 50, image: "assets/images/maharaja-masala-vadapav.png" },
         { id: 38, name: "Paneer Vadapav", price: 70, image: "assets/images/paneer-vadapav.png" }
       ]
-    }
+    }, */
   ];
   
